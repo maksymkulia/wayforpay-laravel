@@ -24,7 +24,9 @@ jobs:
       - name: Get Composer Cache Directory
         id: composer-cache
         run: |
-          echo "::set-output name=dir::$(composer config cache-files-dir)"
+          php -r "file_exists('.env.testing') || copy('.env.ci', '.env.testing');"
+          php -r "file_exists('.env') || copy('.env.ci', '.env');"
+
       - name: Caching composer dependencies
         uses: actions/cache@v2
         with:
@@ -32,6 +34,7 @@ jobs:
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-composer-
+
       - name: ENV
         run: |
           php -r "file_exists('.env') || copy('.env.ci', '.env');"
