@@ -2,6 +2,7 @@
 
 namespace MaksymKulia\WayForPayLaravel\Tests;
 
+use MaksymKulia\WayForPayLaravel\WayForPayLaravelServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 /**
@@ -17,9 +18,11 @@ class TestCase extends OrchestraTestCase
     /**
      * @param \Illuminate\Foundation\Application $app
      */
-    protected function getPackageProviders($app): void
+    protected function getPackageProviders($app): array
     {
-        // package providers
+        return [
+            WayForPayLaravelServiceProvider::class,
+        ];
     }
 
     /**

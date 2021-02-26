@@ -3,11 +3,9 @@
 namespace MaksymKulia\WayForPayLaravel\Tests;
 
 /**
- * Class CoreTests.
- *
  * @group core
  */
-class CoreTests extends TestCase
+class CoreTest extends TestCase
 {
     public function setUp(): void
     {
