@@ -1,6 +1,9 @@
 name: Build
-on: push
-
+on:
+  push:
+    branches:
+      - master
+      - develop
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -15,7 +18,7 @@ jobs:
         with:
           php-version: '7.4'
           extensions: mbstring, intl
-          tools: composer:v2
+          tools: composer:v1
           ini-values: post_max_size=64M, short_open_tag=On, memory_limit=512M
           coverage: none
         env:
