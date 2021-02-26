@@ -5,14 +5,10 @@ namespace MaksymKulia\WayForPayLaravel\Tests;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 /**
- * Class TestCase
- * @package MaksymKulia\WayForPayLaravel\Tests
+ * Class TestCase.
  */
 class TestCase extends OrchestraTestCase
 {
-    /**
-     *
-     */
     public function setUp(): void
     {
         parent::setUp();
