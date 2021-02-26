@@ -1,0 +1,42 @@
+name: Build
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          extensions: mbstring, intl
+          tools: composer:v2
+          ini-values: post_max_size=64M, short_open_tag=On, memory_limit=512M
+          coverage: none
+        env:
+          COMPOSER_TOKEN: ${{ secrets.COMPOSER_TOKEN }}
+
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - name: Caching composer dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+      - name: ENV
+        run: |
+          php -r "file_exists('.env') || copy('.env.ci', '.env');"
+      - name: Install Dependencies
+        run: composer install --no-interaction --no-scripts --no-progress --prefer-dist
+
+      - name: Tests
+        run: vendor/bin/phpunit --log-junit phpunit-report.xml

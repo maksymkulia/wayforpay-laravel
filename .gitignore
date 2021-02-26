@@ -1,0 +1,10 @@
+/vendor/
+/.idea
+.phpstorm.meta.php
+_ide_helper.php
+.php_cs.cache
+.DS_Store
+*.cache
+.env
+.env.testing
+.phpunit.result.cache
