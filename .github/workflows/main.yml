@@ -1,48 +1,31 @@
-name: Build
+name: Laravel Package
 on:
   push:
     branches:
       - master
       - develop
 jobs:
-  test:
+  laravel-tests:
+
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+      - uses: shivammathur/setup-php@v2
         with:
           php-version: '7.4'
           extensions: mbstring, intl
-          tools: composer:v1
+          tools: composer:v2
           ini-values: post_max_size=64M, short_open_tag=On, memory_limit=512M
           coverage: none
-        env:
-          COMPOSER_TOKEN: ${{ secrets.COMPOSER_TOKEN }}
 
-      - name: Get Composer Cache Directory
-        id: composer-cache
-        run: |
-          php -r "file_exists('.env.testing') || copy('.env.ci', '.env.testing');"
-          php -r "file_exists('.env') || copy('.env.ci', '.env');"
+      - name: Copy .env
+        run: php -r "file_exists('.env') || copy('.env.ci', '.env');"
 
-      - name: Caching composer dependencies
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-composer-
-
-      - name: ENV
-        run: |
-          php -r "file_exists('.env') || copy('.env.ci', '.env');"
       - name: Install Dependencies
-        run: composer install --no-interaction --no-scripts --no-progress --prefer-dist
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
-      - name: Tests
+      - name: Execute tests (Unit and Feature tests) via PHPUnit
         run: vendor/bin/phpunit --log-junit phpunit-report.xml
