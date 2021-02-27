@@ -3,6 +3,7 @@
 namespace MaksymKulia\WayForPayLaravel\Tests;
 
 /**
+ * This is a group of core package tests.
  * @group core
  */
 class CoreTest extends TestCase
