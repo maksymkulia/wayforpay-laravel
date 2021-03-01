@@ -4,8 +4,7 @@
 [![Code size](https://img.shields.io/github/languages/code-size/maksymkulia/wayforpay-laravel.svg)](https://github.com/maksymkulia/wayforpay-laravel)
 
 ## Docs
-This package uses [WayForPay PHP-SDK](https://github.com/wayforpay/php-sdk).
-Detailed documentation could be found here: [WayForPay API](https://wiki.wayforpay.com/en).
+Documentation could be found here: [WayForPay API](https://wiki.wayforpay.com/en).
 
 ## Requirements
 
