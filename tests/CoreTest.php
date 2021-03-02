@@ -15,10 +15,28 @@ class CoreTest extends TestCase
 
     /**
      * @test
-     * @group core-simple
+     * @group core-connects-api
      */
-    public function it_successfully_connects_to_live_api()
+    public function connects_to_api()
     {
-        $this->assertEquals(1, 1);
+        $this->markTestSkipped('Need to create functionality');
+    }
+
+    /**
+     * @test
+     * @group core-creds
+     */
+    public function test_creds_working()
+    {
+        $this->markTestSkipped('Need to create functionality');
+    }
+
+    /**
+     * @test
+     * @group core-creds
+     */
+    public function test_creds_are_ok()
+    {
+        $this->markTestSkipped('Need to create functionality');
     }
 }

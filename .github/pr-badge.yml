@@ -5,4 +5,4 @@
 - label: "PR Size"
   message: "Large"
   color: "red"
-  when: "$additions > 200"
+  when: "$additions > 500"
