@@ -21,4 +21,3 @@ Documentation could be found here: [WayForPay API](https://wiki.wayforpay.com/en
 
 ## Copyrights
 Package developed by [Maksym Kulia](https://github.com/maksymkulia).
-
