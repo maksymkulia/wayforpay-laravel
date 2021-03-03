@@ -5,10 +5,8 @@ namespace MaksymKulia\WayForPayLaravel\Payment;
 use MaksymKulia\WayForPayLaravel\Request\Request;
 
 /**
- * Class Purchase
- * @package MaksymKulia\WayForPayLaravel\Payment
+ * Class Purchase.
  */
 class Purchase extends Request
 {
-
 }

@@ -3,10 +3,8 @@
 namespace MaksymKulia\WayForPayLaravel\Request;
 
 /**
- * Class Request
- * @package MaksymKulia\WayForPayLaravel\Request
+ * Class Request.
  */
 class Request
 {
-
 }

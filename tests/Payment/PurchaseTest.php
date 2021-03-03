@@ -2,8 +2,8 @@
 
 namespace MaksymKulia\WayForPayLaravel\Tests\Payment;
 
-use MaksymKulia\WayForPayLaravel\Tests\TestCase;
 use MaksymKulia\WayForPayLaravel\Payment\Purchase;
+use MaksymKulia\WayForPayLaravel\Tests\TestCase;
 
 /**
  * This is a group of tests related to Payment Purchase.
