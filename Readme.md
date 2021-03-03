@@ -8,7 +8,7 @@ Documentation could be found here: [WayForPay API](https://wiki.wayforpay.com/en
 
 ## Requirements
 
-- PHP ^7.2;
+- PHP ^7.4;
 - Laravel ^6;
 
 ## Installation

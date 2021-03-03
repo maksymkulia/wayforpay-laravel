@@ -8,3 +8,4 @@ _ide_helper.php
 .env
 .env.testing
 .phpunit.result.cache
+composer.lock
