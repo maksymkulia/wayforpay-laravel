@@ -3,6 +3,7 @@
 namespace MaksymKulia\WayForPayLaravel\Tests\Payment;
 
 use MaksymKulia\WayForPayLaravel\Tests\TestCase;
+use MaksymKulia\WayForPayLaravel\Payment\Purchase;
 
 /**
  * This is a group of tests related to Payment Purchase.
@@ -13,6 +14,8 @@ class PurchaseTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
+
+        $this->purchase = app(Purchase::class);
     }
 
     /**
