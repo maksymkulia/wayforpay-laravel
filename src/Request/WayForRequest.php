@@ -9,7 +9,6 @@ use GuzzleHttp\Psr7\Request;
  */
 class WayForRequest
 {
-
     /**
      * @var Request
      */
@@ -19,7 +18,7 @@ class WayForRequest
      * WayForRequest constructor.
      * @param Request $request
      */
-    function __construct(Request $request)
+    public function __construct(Request $request)
     {
         $this->request = $request;
     }
