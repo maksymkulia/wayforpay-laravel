@@ -1,6 +1,6 @@
 <?php
 
-namespace MaksymKulia\WayForPayLaravel\Request;
+namespace MaksymKulia\WayForPayLaravel\Requests;
 
 use GuzzleHttp\Psr7\Request;
 

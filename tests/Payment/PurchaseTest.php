@@ -2,7 +2,7 @@
 
 namespace MaksymKulia\WayForPayLaravel\Tests\Payment;
 
-use MaksymKulia\WayForPayLaravel\Payment\Purchase;
+use MaksymKulia\WayForPayLaravel\Payments\Purchase;
 use MaksymKulia\WayForPayLaravel\Tests\TestCase;
 
 /**
