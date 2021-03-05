@@ -4,45 +4,44 @@ namespace MaksymKulia\WayForPayLaravel\Models\Card;
 
 /**
  * Model, that describes attributes and methods related to bank card
- * with full info for Card
+ * with full info for Card.
  *
  * Class PurchaseCard
- * @package MaksymKulia\WayForPayLaravel\Models
  */
 class FullCard extends Root
 {
     /**
      * Full card number.
      * @example 1111 1111 1111 1111
-     * @var integer $number
+     * @var int
      */
     private $number;
 
     /**
      * Expiration month.
      * @example 10
-     * @var integer $expMonth
+     * @var int
      */
     private $expMonth;
 
     /**
      * Expiration year.
      * @example 2025
-     * @var integer $expYear
+     * @var int
      */
     private $expYear;
 
     /**
-     * CVV/CVV2 of card
+     * CVV/CVV2 of card.
      * @example 333
-     * @var integer $cvv
+     * @var int
      */
     private $cvv;
 
     /**
-     * Card holder name
+     * Card holder name.
      * @example John Doe
-     * @var string $holderName
+     * @var string
      */
     private $holderName;
 
@@ -60,13 +59,11 @@ class FullCard extends Root
         int $expYear,
         int $cvv,
         string $holderName
-    )
-    {
+    ) {
         $this->number = $number;
         $this->expMonth = $expMonth;
         $this->expYear = $expYear;
         $this->cvv = $cvv;
         $this->holderName = $holderName;
     }
-
 }

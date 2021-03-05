@@ -4,38 +4,37 @@ namespace MaksymKulia\WayForPayLaravel\Models\Card;
 
 /**
  * Model, that describes attributes and methods related to bank card
- * used for Purchase
+ * used for Purchase.
  *
  * Class PurchaseCard
- * @package MaksymKulia\WayForPayLaravel\Models
  */
 class PurchaseCard extends Root
 {
     /**
      * Mask of card number.
      * @example 42****4242
-     * @var string $pan
+     * @var string
      */
     private $pan;
 
     /**
      * Payment system.
      * @example Visa
-     * @var string $paymentSystem
+     * @var string
      */
     private $paymentSystem;
 
     /**
-     * Country of bank that issued card
+     * Country of bank that issued card.
      * @example Ukraine
-     * @var string $issuerBankCountry
+     * @var string
      */
     private $issuerBankCountry;
 
     /**
-     * Name of bank that issued card
+     * Name of bank that issued card.
      * @example PrivatBank
-     * @var string $issuerBankName
+     * @var string
      */
     private $issuerBankName;
 
@@ -51,12 +50,10 @@ class PurchaseCard extends Root
         string $paymentSystem,
         string $issuerBankCountry,
         string $issuerBankName
-    )
-    {
+    ) {
         $this->pan = $pan;
         $this->paymentSystem = $paymentSystem;
         $this->issuerBankCountry = $issuerBankCountry;
         $this->issuerBankName = $issuerBankName;
     }
-
 }
